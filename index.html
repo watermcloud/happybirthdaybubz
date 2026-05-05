@@ -1,158 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
-  <title>Happy Birthday!!! :)</title>
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-  <!-- My Style -->
-  <link rel="stylesheet" href="./style/main.css" />
-</head>
+  <title>Happy Birthday 🎉</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      overflow: hidden;
+    }
 
+    .container {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    /* WhatsApp Chat Style */
+    .chat-box {
+      width: 300px;
+      max-width: 90%;
+      background: #ece5dd;
+      border-radius: 15px;
+      padding: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .message {
+      background: #dcf8c6;
+      padding: 8px 12px;
+      border-radius: 10px;
+      margin: 5px 0;
+      width: fit-content;
+      max-width: 80%;
+      text-align: left;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeIn 0.5s forwards;
+    }
+
+    .typing {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #25D366;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #1ebe5d;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .final {
+      font-size: 2rem;
+      margin-top: 20px;
+      animation: pop 1s ease forwards;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
 <body>
 
-    <audio class="song" loop autoplay>
-        <source src="./music/hbd.mpeg">
-        </source>
-        Your browser isn't invited for super fun audio time.
-    </audio>
+<div class="container">
+  <h1>Happy Birthday 🎂</h1>
 
-    <div class="container">
-        <div class="one">
-            <h1 class="one">
-                ALLO
-                <span id="name">Bubbbzz</span>
-            </h1>
-            <p class="two" id="greetingText">cie ultahh, belum tidurr kannn ?? hihi</p>
-        </div>
+  <div class="chat-box" id="chat"></div>
 
-        <div class="three">
-            <p>It's your birthday!! :D</p>
-        </div>
+  <button class="btn" onclick="startChat()">Start Message 💬</button>
 
-        <div class="four">
-            <div class="text-box">
-                <p class="hbd-chatbox">
-                Happy birthday to youu!! i wish you were always with me and happy and healthy...
-                </p>
-                <p class="fake-btn">Send</p>
-            </div>
-        </div>
+  <div class="final hidden" id="finalText">You are special ❤️</div>
+</div>
 
-        <div class="five">
-            <p class="idea-1">That's what I was going to do.</p>
-            <p class="idea-2">But then I stopped.</p>
-            <p class="idea-3">
-                I realised, I wanted to do something<br>
-                <strong>special</strong>
-                .
-            </p>
-            <p class="idea-4">Because,</p>
-            <p class="idea-5">
-                You are special
-                <span>:)</span>
-            </p>
-            <p class="idea-6">
-                <span>S</span>
-                <span>O</span>
-            </p>
-        </div>
+<audio autoplay loop>
+  <source src="https://www2.cs.uic.edu/~i101/SoundFiles/HappyBirthday.mid">
+</audio>
 
-        <div class="six">
-            <img src="./img/BUB.png" alt="profile" class="profile-picture" id="imagePath"/>
-            <img src="img/hat.svg" alt="hat" class="hat" />
-            <div class="wish">
-                <h3 class="wish-hbd">Happy Birthday!</h3>
-                <h5 id="wishText">May happiness always be with you! ;)</h5>
-            </div>
-        </div>
+<script>
+const messages = [
+  "Allo Bubzz 😆",
+  "Cie ultahhh 🎉",
+  "Belum tidur ya? 😜",
+  "Aku cuma mau bilang...",
+  "Happy birthday ya ❤️",
+  "Semoga selalu bahagia & sehat 🤍",
+  "Dan semoga...",
+  "Kita selalu bareng 😌"
+];
 
-        <div class="seven">
-            <div class="baloons">
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon1.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon1.svg" alt="" />
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon1.svg" alt="" />
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon1.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon1.svg" alt="" />
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon1.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon1.svg" alt="" />
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon1.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon1.svg" alt="" />
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon1.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-            </div>
-        </div>
+let index = 0;
 
-        <div class="eight">
-            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="20" />
-            </svg>
-            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="20" />
-            </svg>
-            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="20" />
-            </svg>
-            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="20" />
-            </svg>
-            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="20" />
-            </svg>
-            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="20" />
-            </svg>
-            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="20" />
-            </svg>
-            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="20" />
-            </svg>
-            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="20" />
-            </svg>
-        </div>
+function startChat() {
+  const chat = document.getElementById('chat');
+  document.querySelector('.btn').style.display = 'none';
 
-        <div class="nine">
-            <p>Okay, now come back and tell me if you liked it.</p>
-            <p id="replay">Or click, if you want to watch it again.</p>
-            <p class="last-smile">:)</p>
-        </div>
-    </div>
+  function showMessage() {
+    if (index < messages.length) {
+      const typing = document.createElement('div');
+      typing.className = 'typing';
+      typing.innerText = 'typing...';
+      chat.appendChild(typing);
+
+      setTimeout(() => {
+        chat.removeChild(typing);
+
+        const msg = document.createElement('div');
+        msg.className = 'message';
+        msg.innerText = messages[index];
+        chat.appendChild(msg);
+
+        chat.scrollTop = chat.scrollHeight;
+        index++;
+        setTimeout(showMessage, 1200);
+      }, 800);
+    } else {
+      document.getElementById('finalText').classList.remove('hidden');
+    }
+  }
+
+  showMessage();
+}
+</script>
 
 </body>
-    <!-- Greensock -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <!-- Sweetalert -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="application/javascript" src="./script/main.js"></script>
-
 </html>
